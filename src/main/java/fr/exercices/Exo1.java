@@ -1,7 +1,6 @@
 package fr.exercices;
 
 public class Exo1 {
-
     /**
      * @param numbers array of int
      * @return true if numbers between 0 and 20, false instead
@@ -14,7 +13,6 @@ public class Exo1 {
         }
         return true;
     }
-
 
     /**
      * @param numbers array of int
