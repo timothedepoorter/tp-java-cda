@@ -12,5 +12,8 @@ public class Main {
 
         System.out.println(Exo3.isPalyndrome(121));
         System.out.println(Exo3.isPalyndrome(123));
+
+        System.out.println(Exo4.checkIfDoublon(new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}));
+        System.out.println(Exo4.checkIfDoublon(new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 1}));
     }
 }
