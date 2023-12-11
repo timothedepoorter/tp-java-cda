@@ -3,6 +3,7 @@ import java.lang.Math;
 
 public class Main {
     public static void main (String[] args) {
+
         System.out.println("=== EXERCICE 1 ===");
         System.out.println("La moyenne de ces 3 notes est de : " + Exo1.calculateAverageOfNumbers(new int[]{10, 10, 10}));
         System.out.println("La moyenne de ces 3 notes est de : " + Exo1.calculateAverageOfNumbers(new int[]{5, 10, 15}));
