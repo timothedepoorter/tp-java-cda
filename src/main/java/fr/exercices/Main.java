@@ -19,5 +19,10 @@ public class Main {
         System.out.println("=== EXERCICE 4 ===");
         System.out.println(Exo4.checkIfDoublon(new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}));
         System.out.println(Exo4.checkIfDoublon(new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 1}));
+
+        System.out.println("=== EXERCICE 5 ===");
+        System.out.println(Exo5.convertRomanNumIntoArabicNum("X"));
+        System.out.println(Exo5.convertRomanNumIntoArabicNum("LVIII"));
+        System.out.println(Exo5.convertRomanNumIntoArabicNum("MCMXCII"));
     }
 }
