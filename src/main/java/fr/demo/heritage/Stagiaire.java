@@ -53,4 +53,9 @@ public class Stagiaire extends Personne {
     public int getDureeStage() {
         return Period.between(this.debutStage, this.finStage).getDays();
     }
+
+    @Override
+    public void danser(String danse) {
+        System.out.println("Je danse une danse " + danse);
+    }
 }

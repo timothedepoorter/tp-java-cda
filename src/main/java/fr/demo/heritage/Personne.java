@@ -3,7 +3,7 @@ package fr.demo.heritage;
 import java.time.LocalDate;
 import java.time.Period;
 
-public class Personne {
+public abstract class Personne {
     protected String nom;
 
     protected String prenom;
@@ -47,4 +47,10 @@ public class Personne {
     public int getAge() {
         return Period.between(dateNaissance, LocalDate.now()).getYears();
     }
+
+    /**
+     * Méthode pour danser
+     * @param danse String
+     */
+    public abstract void danser(String danse);
 }

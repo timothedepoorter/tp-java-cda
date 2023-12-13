@@ -115,4 +115,9 @@ public class Salarie extends Personne {
     public String toString() {
         return "Le salarié s'appelle " + this.nom + ' ' + this.prenom;
     }
+
+    @Override
+    public void danser(String danse) {
+        System.out.println("Je danse la " + danse);
+    }
 }
