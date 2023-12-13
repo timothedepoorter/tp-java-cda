@@ -1,6 +1,7 @@
 package fr.demo.heritage;
 
 import java.time.LocalDate;
+import java.time.Period;
 
 public class Stagiaire extends Personne {
     private LocalDate debutStage;
@@ -47,5 +48,9 @@ public class Stagiaire extends Personne {
         String phrase1 = "Le stagiaire s'appelle " + this.nom + ' ' + this.prenom;
         String phrase2 = ".\nSon stage démarre le " + this.debutStage + " et prends fin le " + this.finStage + ".";
         return phrase1 + phrase2;
+    }
+
+    public int getDureeStage() {
+        return Period.between(this.debutStage, this.finStage).getDays();
     }
 }
