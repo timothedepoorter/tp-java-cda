@@ -2,13 +2,9 @@ package fr.demo.heritage;
 
 import java.time.LocalDate;
 
-public class Salarie extends Personne {
+public class Salarie extends Collaborateur {
     public static final int HEURE_TRAVAILLEES_MENSUELLES_NORMALES = 151;
     private double tauxHoraireBrut;
-
-    private LocalDate debutContrat;
-
-    private LocalDate finContrat;
 
     public Salarie (
             String nom,
@@ -17,7 +13,13 @@ public class Salarie extends Personne {
             double tauxHoraireBrut,
             LocalDate debutContrat
     ) {
-        super(nom, prenom, dateNaissance);
+        super(
+                nom,
+                prenom,
+                dateNaissance,
+                debutContrat,
+                null
+        );
         this.debutContrat = debutContrat;
         this.tauxHoraireBrut = tauxHoraireBrut;
     }
@@ -33,26 +35,6 @@ public class Salarie extends Personne {
             );
         }
         this.tauxHoraireBrut = nouveauTauxHoraireBrut;
-    }
-
-    public LocalDate getDebutContrat() {
-        return debutContrat;
-    }
-
-    public void setDebutContrat(LocalDate debutContrat) {
-        this.debutContrat = debutContrat;
-    }
-
-    public LocalDate getFinContrat() throws Exception {
-        if (finContrat == null) {
-            throw new Exception("Le salarié n'est pas (encore :P) licencié !");
-        } else {
-            return this.finContrat;
-        }
-    }
-
-    public void setFinContrat(LocalDate finContrat) {
-        this.finContrat = finContrat;
     }
 
     /**
@@ -90,25 +72,13 @@ public class Salarie extends Personne {
         }
     }
 
-    /**
-     * Vérifie si le salarié n'est plus présent dans l'entreprise
-     * @return Vrai si le salarié n'est plus dans les effectifs.
-     */
-    private boolean estLicencie() {
-        return this.finContrat != null && finContrat.isBefore(LocalDate.now());
-    }
-
     public double payerSalaireMensuelBrut() {
         return this.payerSalaireMensuelBrut(HEURE_TRAVAILLEES_MENSUELLES_NORMALES);
     }
 
+    @Override
     public void travailler() {
         System.out.println(this.nom + this.prenom + "travaille dur car il aimerait bien une augmentation !");
-    }
-
-    public void licencier(LocalDate dateDeFin) {
-        this.finContrat = dateDeFin;
-        System.out.println(this.nom + this.prenom + "est viré. LOL");
     }
 
     @Override
@@ -117,7 +87,16 @@ public class Salarie extends Personne {
     }
 
     @Override
+    public void direBonjour() {
+        System.out.println("Hello, je suis un salarié de ouf !");
+    }
+
+    /**
+     * Le salarié danse
+     * @param danse - Le nom de la danse
+     */
+    @Override
     public void danser(String danse) {
-        System.out.println("Je danse la " + danse);
+        System.out.println("Je danse la " + danse );
     }
 }

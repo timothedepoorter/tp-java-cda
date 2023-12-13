@@ -3,7 +3,7 @@ package fr.demo.heritage;
 import java.time.LocalDate;
 import java.time.Period;
 
-public class Stagiaire extends Personne {
+public class Stagiaire extends Collaborateur {
     private LocalDate debutStage;
     private LocalDate finStage;
 
@@ -13,7 +13,13 @@ public class Stagiaire extends Personne {
             LocalDate dateNaissance,
             LocalDate dateDebutStage,
             LocalDate dateFinStage) {
-        super(nom, prenom, dateNaissance);
+            super(
+                nom,
+                prenom,
+                dateNaissance,
+                dateDebutStage,
+                dateFinStage
+            );
         this.debutStage = dateDebutStage;
         this.finStage = dateFinStage;
     }
@@ -34,10 +40,12 @@ public class Stagiaire extends Personne {
         this.finStage = finStage;
     }
 
-    public static void travailler() {
+    @Override
+    public void travailler() {
         System.out.println("Je travaille ! (sur l'imprimante et la machine à café)");
     }
 
+    @Override
     public void licencier(LocalDate dateDeFin) {
         this.finStage = dateDeFin;
         System.out.println(this.nom + this.prenom + " est viré.");
